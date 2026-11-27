@@ -142,6 +142,9 @@ class DesignerResource extends Resource
                                 ->default(true),
                             TextInput::make('sort_order')
                                 ->numeric()
+                                ->integer()
+                                ->minValue(0)
+                                ->maxValue(9999)
                                 ->default(0)
                                 ->helperText('Lower numbers appear first. You can also drag rows in the list.'),
                         ]),
