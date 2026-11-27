@@ -1,0 +1,84 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/*
+ * The Latest Project brand for the admin panel: monochrome, Creato Display,
+ * square corners and no letter-spacing, like the public site.
+ */
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../../../fonts/creato-display/CreatoDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../../../fonts/creato-display/CreatoDisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('../../../fonts/creato-display/CreatoDisplay-Bold.woff2') format('woff2');
+    font-weight: 600 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --radius-xs: 0;
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --radius-xl: 0;
+    --radius-2xl: 0;
+}
+
+.fi-body {
+    @apply bg-white;
+}
+
+.fi-checkbox-input {
+    @apply rounded-none;
+}
+
+.fi-header-heading,
+.fi-simple-header-heading {
+    @apply font-medium tracking-normal;
+}
+
+.fi-section,
+.fi-ta-ctn,
+.fi-wi-stats-overview-stat {
+    @apply shadow-none;
+}
+
+/* Login: the studio photo fills the left half on wide screens. */
+
+.tlp-auth-visual {
+    @apply relative hidden bg-black bg-cover bg-center lg:block;
+}
+
+.tlp-auth-visual::after {
+    @apply absolute inset-0 bg-linear-to-t from-black/60 to-transparent to-50%;
+    content: '';
+}
+
+.tlp-auth-visual-logo {
+    @apply absolute bottom-10 left-10 z-10 h-12 w-auto;
+}
+
+.fi-simple-layout:has(> .tlp-auth-visual) {
+    @apply lg:grid lg:grid-cols-2 lg:items-stretch;
+
+    .fi-simple-main {
+        @apply shadow-none ring-0;
+    }
+}
