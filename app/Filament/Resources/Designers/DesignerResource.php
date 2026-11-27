@@ -74,6 +74,10 @@ class DesignerResource extends Resource
                             ->image()
                             ->imageEditor()
                             ->imageAspectRatio('4:5')
+                            ->automaticallyResizeImagesMode('contain')
+                            ->automaticallyResizeImagesToWidth('1600')
+                            ->automaticallyResizeImagesToHeight('1600')
+                            ->automaticallyUpscaleImagesWhenResizing(false)
                             ->maxSize(10240)
                             ->helperText('Portrait photo, ideally 4:5 and shot in the same style as the other designers.')
                             ->columnSpanFull(),
